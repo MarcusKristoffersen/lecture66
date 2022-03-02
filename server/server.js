@@ -4,7 +4,10 @@ import path from "path";
 const app = express();
 
 app.get("/api/login", (req, res) => {
-  res.json({ username: "admin", fullName: "Noen Àndre Persson" });
+  function respond() {
+    res.json({ username: "admin", fullName: "Noen Àndre Persson" });
+  }
+  setTimeout(respond, 3000);
 });
 
 app.use(express.static("../client/dist"));
